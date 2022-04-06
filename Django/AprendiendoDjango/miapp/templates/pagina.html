@@ -1,0 +1,15 @@
+
+{% extends 'layout.html' %}
+
+{% load filters %}
+{% block title %}Página de pruebas{% endblock %}
+
+
+{% block content %}
+<h1 class="title">Página de mi web</h1>
+<p>{{"Creado por Chinesse"|cut:" "}}</p>
+<hr>
+
+<p>{{"hola Perras"|wordcount}} </p>
+{{"Sergio Hernández"|saludo|safe}}
+{% endblock %}

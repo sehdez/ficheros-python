@@ -1,0 +1,36 @@
+{% extends 'layout.html' %}
+
+{% load filters %}
+
+{% block title %}Artículos{% endblock title %}
+{% block content %}
+<center><h2>Listado de los artículos</h2></center>
+
+    {% if messages %}
+        {% for message in messages %}
+            <div class = "message">
+                {{message}}
+            </div>
+            {% endfor %}
+    {% endif %}
+    {% for articulo  in articulos  %}
+        <div class ="articulos">
+            <h3><strong>Título: </strong>{{articulo.title}} </h3>
+            <p><strong>Contenido: </strong>{{articulo.content}}</p>
+            <p> {{articulo.creat_at}} </p>
+            <p><strong>Publico: </strong>
+                {% if articulo.public %}
+                    Sí
+                {% else %}
+                    No
+                {% endif %} 
+            </p>
+                <a href= "{% url 'borrar_articulo' id=articulo.id %}" >Eliminar </a>
+            
+        </div>
+    {% endfor %}
+ 
+    
+    
+
+{% endblock content %}

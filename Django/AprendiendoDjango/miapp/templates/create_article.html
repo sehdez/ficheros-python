@@ -1,0 +1,23 @@
+{% extends 'layout.html' %}
+{% block title %}Crear Artículo{% endblock %}
+
+
+{% block content %}
+<h1 class="title">Crear Artículo</h1>
+
+{% if form.errors %}
+    <strong class="rojo">
+        Hay errores en el formulario
+    </strong>
+    
+{% endif %}
+
+<form action = "" method= "POST">
+    {% csrf_token %}
+    {{form.as_p}}
+    
+    <input type="submit" value="Guardar"/>
+</form>
+
+
+{% endblock %}

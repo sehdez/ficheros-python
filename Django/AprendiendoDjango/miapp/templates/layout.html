@@ -1,0 +1,80 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>
+        {% block title%}
+        <!--titulo de cada página-->
+        {% endblock %}
+        | Chino</title>
+        
+        
+        <link rel="stylesheet" type = "text/css" href="{% static 'css/styles.css' %}" />
+</head>
+
+<body>
+    <!-- Cabecera de la página -->
+    <header>
+        <div id = "logotipo">
+            <img src="{%static 'images/logo.png' %}" alt="">
+            <h1>Sitio Web con DJango </h1>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li>
+                <a href="{% url 'inicio' %}">Inicio</a>
+            </li>
+            <li>
+                <a href="{% url 'hola_mundo'%}">Hola Mundo</a>
+            </li>
+            <li>
+                <a href="{% url 'pagina'%}">Página de pruebas</a>
+            </li>
+            <li>
+                <a href="{% url 'contacto'  %}">Contacto</a>
+            </li>
+            <li>
+                <a href="{% url 'articulos' %}">Artículos</a>
+            </li>
+            <li>
+                <a href="{% url 'create_article' %}">Crear Artículo</a>
+            </li>
+            <li>
+                <input type="text" name="buscar" id="buscar" placeholder="Search" >
+                <input type="button" value="Buscar">
+            </li>
+    
+        </ul>
+    </nav>
+
+    <div class="barra">
+        <span class="esquina-izquierda"></span>
+        <span class="relleno-barra"></span>
+        <span class="esquina-derecha"></span>
+    </div>
+  
+
+    
+    <div id = content>
+        <div class="box">
+        
+            {% block content %}
+                <!--código que viene de templates-->
+                <strong>Contenido Original</strong>
+            {% endblock %}
+        </div>
+        
+
+    </div>
+
+
+    <footer>
+        Chino es la verga &copy; Sergio Hernández {% now "d/m/Y  h:m:s" %}
+    </footer>
+</body>
+
+</html>

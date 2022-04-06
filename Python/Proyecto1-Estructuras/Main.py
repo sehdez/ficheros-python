@@ -1,0 +1,55 @@
+"""
+THE PROYECTS ARE CREATED BY SERGIO HERNÁNDEZ, IN ORDER TO FEEDBACK AND
+PUT INTO PRACTICE EVERYTHING LEARNED FROM THE COURSE
+PROYECT 1:
+- SHOW THE DATA TYPE
+- SHOW THE STRUCTURE IF, FOR AND WHILE
+- OPTIONS WHIT DIRECTORIES AND FILES
+    - CREATE DIRECTORY
+    - CREATE FILE
+    - ADD TEXT TO THE FILE
+    - SHOW FILE TEXT
+    - RENAME DIRECTORY
+    - RENAME FILE
+    - DELETE DIRECTORY
+    - DELETE FILE
+
+
+LOS PROYECTOS SON HECHOS COMPLETAMENTE POR SERGIO HERNANDEZ, CON EL FIN
+DE RETROALIMENTARSE Y PONER EN PRACTICA TODO LO APRENDIDO POR EL CURSO
+MASTER EN PYTHON.
+PROYECTO 1:
+- MOSTRAR TIPOS DE DATOS
+- MOSTRAR LA ESTRUCTURA DEL IF Y DE LOS BUCLES
+- OPCIONES CON DIRECTORIOS Y ARCHIVOS:
+    - CREAR DIRECTORIO
+    - CREAR ARCHIVO
+    - AGREGAR TEXTO AL ARCHIVO
+    - MOSTRAR EL TEXTO DEL ARCHIVO
+    - RENOMBRAR DIRECTORIO
+    - RENOMBRAR ARCHIVO
+    - BORRAR DIRECTORIO
+    - BORRAR ARCHIVO  
+    - LISTAR ARCHIVOS   
+"""
+
+import os , shutil
+
+# Importamos la carpeta de paquetes
+from Paquetes import mostrar
+
+# El try es para el uso de las excepciones
+try:
+    mostrar.main()
+
+except ValueError:
+    print("Ingresaste un tipo de dato no admitido")
+    os.system("pause")
+    mostrar.main()
+except Exception as e:
+    print(type(e).__name__)
+    os.system("pause")
+    mostrar.main()
+
+
+

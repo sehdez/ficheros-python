@@ -1,0 +1,83 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>
+        {% block title %}{% endblock title %}
+        | Chino
+    </title>
+               
+    <link rel="stylesheet" type = "text/css" href="{% static 'css/styles1.css' %}" />
+</head>
+
+<body>
+    <header>
+        <h1><a href="{% url 'index1' %}">Sitio Web 1| Chinesse</a></h1>
+    </header>
+    
+    <nav> 
+        <ul>
+            <li>
+                <a href="{% url 'index1' %}">Inicio</a>
+            </li>
+            <li>
+                <a href="{% url 'articles1' %}">Mostrar</a>
+            </li>
+            <li>
+                <a href="{% url 'articles' %}">Articulos</a>
+            </li>
+            <li>
+                <input type= "search" name="buscar" id= "txt_buscar" placeholder=" Search"/>
+                <input type ="submit" name="buscar" value ="Buscar" id= "btn_buscar"/>
+                
+            </li>
+            
+
+        </ul>
+    </nav>
+    <div class = "box">
+        <div class ="content"> 
+            {% block content %}
+            <div class= "content_left">
+                <h2>Contenido de prueba</h2>
+                <article>
+                    <p>{% lorem 1 b random %}</p>
+                    <hr/>
+                </article>
+                <h2>Contenido de prueba</h2>
+                <article>
+                    <p>{% lorem 1 b random %}</p>
+                    <hr/>
+                </article>
+                <h2>Contenido de prueba</h2>
+                <article>
+                    <p>{% lorem 1 b random %}</p>
+                    <hr/>
+                </article>
+                <h2>Contenido de prueba</h2>
+                <article>
+                    <p>{% lorem 1 b random %}</p>
+                    <hr/>
+                </article>
+            </div>
+            <div class = "content_right">
+                <h3>Contenido de prueba</h3>
+                <article>
+                    <p>{% lorem 1 b random %} </p>
+                </article>
+            </div>
+            {% endblock content %}
+        </div>
+    </div>
+
+    <footer>
+        <p>Sergio Hernández &copy; | Todos los derechos reservados</p>
+    </footer>
+
+
+</body>
+
+
+</html>

@@ -1,0 +1,29 @@
+{% extends 'layout.html' %}
+
+{% block title %}{{title}}{% endblock %}
+
+{% block content%}
+    <!--Para llamar al contenido del padre-->
+    {% comment "Así es como se comenta en Django" %}
+    
+    {% endcomment %} 
+    <h1 class="title">{{title}}</h1>
+    {% for lenguaje in lenguajes  %}
+        <p>{{lenguaje}}  </p>
+    {% empty %}
+        <p>No hay lenguajes para mostrar</p>
+    {% endfor %}
+    
+    
+
+        
+ 
+    
+    <p>Años hasta el 2050</p>
+        <ul>{% for year in rango %}
+                {% if year|divisibleby:2 == True %}
+                    <li>{{forloop.counter}}.- {{year}}</li>
+                    {% endif %}
+                    {% endfor %}
+        </ul>
+{% endblock %}

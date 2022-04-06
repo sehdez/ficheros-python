@@ -1,0 +1,52 @@
+{% extends 'layout1.html' %}
+
+
+{% block content %}
+ 
+        
+    <div class= "content_left">
+
+        <center><h2>Artícuclos Creados</h2></center>
+        {% if messages %}
+            {% for message in messages %}
+                <div class = "message">
+                    <h2>{{message}}</h2>
+                </div>
+            {% endfor %}
+        {% endif %}
+        <div class ="content_articles">
+            {% for articulo in articulos %}
+                <div class = "articulos">
+                    <h3><strong>Título:</strong>{{articulo.title}}</h3>
+                    <img src="{{articulo.image}}"/>
+                    <p><strong>Contenido:</strong>{{articulo.content}}</p>
+                    <p><strong>Publicado:</strong>{{articulo.creat_at}}</p>
+                    <a href = "{% url 'delete' id=articulo.id %}">Eliminar</a>
+                </div>
+            
+            {% endfor %}
+        </div>
+
+
+
+
+        
+    </div>
+    <div class= "content_right">
+        
+        <h2>Crear Artícuclo</h2>
+        <form action= "" method ="POST">
+            {{form.as_p}}
+            {% csrf_token %}
+            <p><input type="submit" value="Guardar"/></p>
+        </form>
+        
+
+    </div>  
+
+
+
+
+
+
+{% endblock content %}

@@ -1,0 +1,25 @@
+{% extends 'layout1.html' %}
+
+
+{% block content %}
+ 
+        
+    <div class= "content_left">
+        <h2>Artícuclos Creados</h2>
+        {% for articulo in articulos %}
+            {{articulo.title}}
+        
+        {% endfor %}
+
+    </div>
+    <div class= "content_right">
+        
+
+    </div>  
+
+
+
+
+
+
+{% endblock content %}
